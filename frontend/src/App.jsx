@@ -282,7 +282,7 @@ function App() {
           </div>
 
           
-            </div classname="flex justify-center">
+            <div classname="flex justify-center">
             <button className="px-8 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-all transform hover:scale-105">
               SUBMIT
             </button>
