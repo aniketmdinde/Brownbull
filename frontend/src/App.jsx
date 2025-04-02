@@ -91,18 +91,11 @@ function App() {
     <div className="min-h-screen bg-shipping">
       <div className="min-h-screen bg-gradient-to-b from-blue-400/50 to-blue-600/50 backdrop-blur-sm p-6">
         <div className="max-w-7xl mx-auto glass-effect rounded-lg shadow-xl p-6 animate-fade-in">
-          <h1 className="text-4xl font-bold text-center text-blue-900 mb-8">Search A Quote</h1>
+          <h1 className="text-4xl font-bold text-center text-blue-900 mb-8">Create Shipment </h1>
           
           {/* Transport Mode Selection */}
           <div className="flex gap-4 mb-6">
-            <button 
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all transform hover:scale-105 ${
-                transportMode === 'ocean' ? 'bg-blue-500 text-white' : 'bg-white/80'
-              }`}
-              onClick={() => setTransportMode('ocean')}
-            >
-              <Ship size={20} /> Ocean
-            </button>
+            
             <button 
               className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all transform hover:scale-105 ${
                 transportMode === 'air' ? 'bg-blue-500 text-white' : 'bg-white/80'
@@ -111,9 +104,7 @@ function App() {
             >
               <Plane size={20} /> Air
             </button>
-            <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/80 transition-all transform hover:scale-105">
-              <History size={20} /> HISTORY
-            </button>
+            
           </div>
 
           {/* Pickup and Delivery */}
@@ -153,7 +144,7 @@ function App() {
 
           {/* Ready Date */}
           <div className="mb-6">
-            <label className="text-gray-700">Ready Date</label>
+            <label className="text-gray-700">Shipment Date</label>
             <div className="flex items-center gap-2 p-2 border rounded-lg w-52 bg-white/80">
               <Calendar size={20} className="text-gray-400" />
               <input 
@@ -166,15 +157,7 @@ function App() {
           </div>
 
           {/* Search By Total Shipment Toggle */}
-          <div className="flex items-center gap-2 mb-6">
-            <span className="text-gray-700">Search By Total Shipment</span>
-            <button 
-              className={`w-12 h-6 rounded-full transition-colors ${searchByTotal ? 'bg-blue-500' : 'bg-gray-300'}`}
-              onClick={() => setSearchByTotal(!searchByTotal)}
-            >
-              <div className={`w-4 h-4 bg-white rounded-full transform transition-transform ${searchByTotal ? 'translate-x-7' : 'translate-x-1'}`} />
-            </button>
-          </div>
+          
 
           {/* Package Details */}
           <div className="space-y-4 mb-6">
@@ -300,41 +283,10 @@ function App() {
           </div>
 
           {/* Customs & Insurance */}
-          <div className="flex items-center justify-between mb-6">
-            <div className="space-y-2">
-              <h3 className="font-semibold text-gray-700">Customs & Insurance</h3>
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
-                  <span>Insurance</span>
-                  <button 
-                    className={`w-12 h-6 rounded-full transition-colors ${insurance ? 'bg-blue-500' : 'bg-gray-300'}`}
-                    onClick={() => setInsurance(!insurance)}
-                  >
-                    <div className={`w-4 h-4 bg-white rounded-full transform transition-transform ${insurance ? 'translate-x-7' : 'translate-x-1'}`} />
-                  </button>
-                </div>
-                <label className="flex items-center gap-2">
-                  <input 
-                    type="checkbox" 
-                    checked={customsClearance}
-                    onChange={(e) => setCustomsClearance(e.target.checked)}
-                    className="rounded text-blue-500"
-                  />
-                  I Need Customs Clearance
-                </label>
-                <label className="flex items-center gap-2">
-                  <input 
-                    type="checkbox"
-                    checked={dangerousShipment}
-                    onChange={(e) => setDangerousShipment(e.target.checked)}
-                    className="rounded text-blue-500"
-                  />
-                  My Shipment Is Dangerous
-                </label>
-              </div>
-            </div>
+          
+            <div classname=" flex justify-center">
             <button className="px-8 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-all transform hover:scale-105">
-              SEARCH
+              SUBMIT
             </button>
           </div>
         </div>
