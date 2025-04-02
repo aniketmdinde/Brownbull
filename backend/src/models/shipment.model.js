@@ -22,4 +22,4 @@ const shipmentSchema = new mongoose.Schema({
     status: { type: String, enum: ["in progress", "delivered", "lost"], default: "in progress" },
 });
 
-module.exports = mongoose.model("Shipment", shipmentSchema);
+export const Shipment = mongoose.model("Shipment", shipmentSchema);
